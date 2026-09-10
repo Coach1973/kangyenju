@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>康燕居 ｜ 一盞燕窩，四百年的講究</title>
+<meta name="description" content="康燕居 — 燕窩的由來與故事、本草典籍中的燕窩、世界各國的採集方式，以及野生洞燕採收現場實錄。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;500;700;900&family=Noto+Sans+TC:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============ tokens ============ */
+:root{
+  --paper:#f7f2e7;
+  --paper-2:#efe7d8;
+  --ink:#1b1712;
+  --ink-2:#4a423a;
+  --ink-3:#7d7264;
+  --night:#14100c;
+  --night-2:#1e1811;
+  --bone:#f4ece0;
+  --bone-dim:#c4b8a5;
+  --gold:#a8762c;
+  --gold-lite:#c9a24a;
+  --line:rgba(27,23,18,.14);
+  --line-night:rgba(201,162,74,.24);
+  --display:"Noto Serif TC",serif;
+  --sans:"Noto Sans TC",sans-serif;
+  --pad:clamp(20px,5vw,96px);
+  --sect:clamp(72px,9vw,148px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-weight:300;
+  font-size:clamp(15.5px,1.05vw,17px);line-height:1.95;
+  -webkit-font-smoothing:antialiased;letter-spacing:.02em;
+  overflow-x:hidden;
+}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:var(--gold);color:#fff}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+
+/* ============ shared ============ */
+.wrap{max-width:1280px;margin-inline:auto;padding-inline:var(--pad)}
+.kicker{
+  font-family:var(--sans);font-size:12px;font-weight:500;
+  letter-spacing:.46em;text-transform:uppercase;color:var(--gold);
+}
+.zh-num{
+  font-family:var(--display);font-weight:300;font-size:13px;
+  letter-spacing:.5em;color:var(--ink-3);
+}
+h2.sect-title{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(32px,4.6vw,60px);line-height:1.25;letter-spacing:.03em;
+  margin-top:20px;
+}
+h3{font-family:var(--display);font-weight:700;letter-spacing:.03em;line-height:1.4}
+.lede{
+  font-size:clamp(16px,1.35vw,19px);line-height:2.05;color:var(--ink-2);
+  max-width:40em;margin-top:26px;font-weight:300;
+}
+.hair{height:1px;background:var(--line);border:0}
+
+/* ============ nav ============ */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(247,242,231,.88);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{
+  max-width:1280px;margin-inline:auto;padding:14px var(--pad);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.brand{display:flex;align-items:baseline;gap:12px;text-decoration:none}
+.brand b{font-family:var(--display);font-weight:900;font-size:23px;letter-spacing:.22em}
+.brand span{font-size:10px;letter-spacing:.34em;color:var(--ink-3)}
+.nav ul{display:flex;gap:clamp(14px,2.2vw,34px);list-style:none}
+.nav a.lnk{
+  text-decoration:none;font-size:14px;letter-spacing:.14em;color:var(--ink-2);
+  padding:6px 0;border-bottom:1px solid transparent;transition:border-color .18s,color .18s;
+}
+.nav a.lnk:hover{color:var(--ink);border-bottom-color:var(--gold)}
+@media(max-width:860px){.nav ul{display:none}}
+
+/* ============ hero ============ */
+.hero{position:relative;min-height:min(86vh,760px);display:grid;
+  grid-template-columns:1.05fr .95fr;border-bottom:1px solid var(--line)}
+.hero-txt{padding:clamp(48px,7vw,96px) 0 clamp(48px,7vw,96px) var(--pad);
+  display:flex;flex-direction:column;justify-content:center;position:relative}
+.hero-vert{
+  align-self:flex-start;
+  writing-mode:vertical-rl;font-family:var(--display);font-weight:900;
+  font-size:clamp(58px,7.4vw,104px);letter-spacing:.16em;line-height:1;
+  margin-bottom:34px;
+}
+.hero-vert i{font-style:normal;color:var(--gold)}
+.hero-tag{font-family:var(--display);font-weight:500;
+  font-size:clamp(21px,2.5vw,32px);line-height:1.62;letter-spacing:.05em}
+.hero-sub{margin-top:24px;max-width:26em;color:var(--ink-2);line-height:2.05}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;min-height:48px;
+  padding:0 28px;font-size:14.5px;letter-spacing:.16em;text-decoration:none;
+  border:1px solid var(--ink);transition:background .2s,color .2s;
+}
+.btn-solid{background:var(--ink);color:var(--paper)}
+.btn-solid:hover{background:var(--gold);border-color:var(--gold)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.hero-img{position:relative;overflow:hidden;background:#0d0a07}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 46%}
+.hero-img figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:20px 24px;
+  background:linear-gradient(180deg,transparent,rgba(13,10,7,.86));
+  color:var(--bone-dim);font-size:12.5px;letter-spacing:.1em;line-height:1.7;
+}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-txt{padding:56px var(--pad) 48px}
+  .hero-vert{writing-mode:horizontal-tb;font-size:clamp(46px,15vw,72px);letter-spacing:.22em;margin-bottom:22px}
+  .hero-img{height:96vw;max-height:520px}
+  .hero-img img{object-position:50% 42%}
+}
+
+/* ============ ticker strip ============ */
+.strip{background:var(--ink);color:var(--bone);overflow:hidden}
+.strip-in{display:flex;gap:0;flex-wrap:wrap}
+.strip div{
+  flex:1 1 220px;padding:26px var(--pad);border-inline-end:1px solid rgba(244,236,224,.13);
+}
+.strip div:last-child{border-inline-end:0}
+.strip b{display:block;font-family:var(--display);font-size:clamp(20px,2.1vw,27px);
+  font-weight:700;letter-spacing:.04em;margin-bottom:6px}
+.strip small{font-size:12.5px;letter-spacing:.12em;color:var(--bone-dim);line-height:1.7}
+
+/* ============ section ============ */
+section{padding-block:var(--sect)}
+.sect-head{max-width:52em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);align-items:start}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+
+/* origin entries */
+.entries{margin-top:clamp(40px,5vw,72px);display:grid;gap:0;
+  border-top:1px solid var(--line)}
+.entry{
+  display:grid;grid-template-columns:96px 1fr;gap:clamp(16px,3vw,44px);
+  padding:clamp(26px,3.4vw,44px) 0;border-bottom:1px solid var(--line);
+}
+.entry .idx{font-family:var(--display);font-weight:300;font-size:15px;
+  letter-spacing:.34em;color:var(--gold);padding-top:8px}
+.entry h3{font-size:clamp(20px,2.1vw,26px);margin-bottom:12px}
+.entry p{color:var(--ink-2);max-width:44em}
+@media(max-width:640px){.entry{grid-template-columns:1fr;gap:8px}.entry .idx{padding-top:0}}
+
+/* figure */
+.fig{border:1px solid var(--line);background:var(--paper-2)}
+.fig img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.fig figcaption{padding:14px 18px;font-size:12.5px;letter-spacing:.1em;
+  color:var(--ink-3);line-height:1.75;border-top:1px solid var(--line)}
+
+/* ============ 本草 quote — full bleed ============ */
+.bencao{background:var(--paper-2);border-block:1px solid var(--line)}
+.quote-block{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);
+  align-items:center}
+.quote-vert{
+  writing-mode:vertical-rl;font-family:var(--display);font-weight:500;
+  font-size:clamp(22px,2.9vw,38px);line-height:1.85;letter-spacing:.14em;
+  max-height:min(62vh,560px);border-inline-end:1px solid var(--line);
+  padding-inline-end:clamp(18px,2.4vw,34px);
+}
+.quote-vert em{font-style:normal;color:var(--gold)}
+.quote-cite{font-size:13px;letter-spacing:.26em;color:var(--ink-3);margin-top:26px}
+@media(max-width:760px){
+  .quote-block{grid-template-columns:1fr}
+  .quote-vert{writing-mode:horizontal-tb;max-height:none;border-inline-end:0;
+    border-inline-start:2px solid var(--gold);padding-inline:22px 0;font-size:22px;line-height:2}
+}
+.prop{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
+.prop div{background:var(--paper-2);padding:22px 24px}
+.prop dt{font-size:11.5px;letter-spacing:.3em;color:var(--ink-3);margin-bottom:10px}
+.prop dd{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.06em}
+.uses{margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:clamp(24px,3vw,44px)}
+.use h4{font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:.05em;
+  margin:16px 0 10px}
+.use p{color:var(--ink-2);font-size:15.5px;line-height:2}
+.ico{width:30px;height:30px;stroke:var(--ink);fill:none;stroke-width:1.5;
+  stroke-linecap:round;stroke-linejoin:round}
+
+/* ============ 產地 ============ */
+.origin-bars{margin-top:clamp(40px,5vw,68px);border-top:1px solid var(--line)}
+.bar-row{display:grid;grid-template-columns:clamp(90px,12vw,160px) 1fr clamp(88px,10vw,130px);
+  gap:clamp(12px,2vw,28px);align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.bar-row .nm{font-family:var(--display);font-weight:700;font-size:clamp(16px,1.5vw,19px);letter-spacing:.06em}
+.bar-track{display:block;height:9px;background:rgba(27,23,18,.07)}
+.bar-fill{display:block;height:100%;background:var(--ink)}
+.bar-row.lead .bar-fill{background:var(--gold)}
+.bar-row .val{font-family:var(--display);font-size:15px;letter-spacing:.06em;
+  text-align:end;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.src-note{margin-top:16px;font-size:12px;letter-spacing:.08em;color:var(--ink-3);line-height:1.8}
+
+.places{margin-top:clamp(48px,6vw,84px);display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line)}
+.place{background:var(--paper);padding:clamp(24px,2.6vw,34px)}
+.place .flagline{font-size:11.5px;letter-spacing:.3em;color:var(--gold);margin-bottom:14px}
+.place h4{font-family:var(--display);font-size:23px;font-weight:700;letter-spacing:.06em;margin-bottom:12px}
+.place p{font-size:15px;line-height:2;color:var(--ink-2)}
+.place .how{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);
+  font-size:13.5px;letter-spacing:.08em;color:var(--ink-3)}
+
+/* cave vs house */
+.vs{margin-top:clamp(52px,6vw,88px);display:grid;grid-template-columns:1fr 1fr;
+  border:1px solid var(--line)}
+.vs > div{padding:clamp(26px,3vw,42px)}
+.vs > div:first-child{border-inline-end:1px solid var(--line)}
+.vs h4{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);font-weight:700;
+  letter-spacing:.1em;margin-bottom:6px}
+.vs .en{font-size:11px;letter-spacing:.34em;color:var(--gold);margin-bottom:22px}
+.vs ul{list-style:none;display:grid;gap:14px}
+.vs li{display:grid;grid-template-columns:76px 1fr;gap:14px;font-size:15px;line-height:1.9}
+.vs li b{font-weight:500;color:var(--ink-3);font-size:12.5px;letter-spacing:.16em;padding-top:3px}
+@media(max-width:760px){
+  .vs{grid-template-columns:1fr}
+  .vs > div:first-child{border-inline-end:0;border-bottom:1px solid var(--line)}
+}
+
+/* ============ dark chapter ============ */
+.night{background:var(--night);color:var(--bone)}
+.night .kicker{color:var(--gold-lite)}
+.night h2.sect-title{color:var(--bone)}
+.night .lede{color:var(--bone-dim)}
+.film{margin-top:clamp(40px,5vw,72px);display:grid;
+  grid-template-columns:minmax(0,340px) 1fr;gap:clamp(28px,4.4vw,64px);align-items:start}
+.film video{display:block;width:100%;height:auto;aspect-ratio:720/944;object-fit:cover;border:1px solid var(--line-night);background:#000}
+.steps4{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3vw,40px)}
+.steps4 article h4{font-family:var(--display);font-size:clamp(19px,2vw,24px);
+  font-weight:700;letter-spacing:.06em;margin:14px 0 10px}
+.steps4 article h4 span{color:var(--gold-lite);font-family:var(--sans);
+  font-size:12px;letter-spacing:.24em;margin-inline-start:10px;font-weight:400}
+.steps4 article p{color:var(--bone-dim);font-size:15px;line-height:2}
+.steps4 img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line-night)}
+.steps4 .n{font-family:var(--display);font-size:12px;letter-spacing:.34em;color:var(--gold-lite)}
+.vow{margin-top:clamp(48px,6vw,86px);display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line-night);
+  border:1px solid var(--line-night)}
+.vow div{background:var(--night-2);padding:26px 28px}
+.vow b{display:block;font-family:var(--display);font-size:19px;font-weight:700;
+  letter-spacing:.05em;margin-bottom:10px}
+.vow small{font-size:13.5px;line-height:1.85;color:var(--bone-dim)}
+.poster-link{display:inline-flex;align-items:center;gap:12px;margin-top:34px;
+  font-size:14px;letter-spacing:.16em;color:var(--gold-lite);text-decoration:none;
+  border-bottom:1px solid var(--line-night);padding-bottom:6px}
+.poster-link:hover{border-bottom-color:var(--gold-lite)}
+@media(max-width:900px){
+  .film{grid-template-columns:1fr}
+  .film video{max-width:340px;margin-inline:auto}
+}
+@media(max-width:560px){.steps4{grid-template-columns:1fr}}
+
+/* ============ 堅持 ============ */
+.keeps{margin-top:clamp(40px,5vw,68px);display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(28px,3.4vw,52px)}
+.keep .no{font-family:var(--display);font-size:13px;letter-spacing:.34em;color:var(--gold)}
+.keep h4{font-family:var(--display);font-size:21px;font-weight:700;letter-spacing:.05em;margin:12px 0 10px}
+.keep p{font-size:15px;line-height:2;color:var(--ink-2)}
+
+/* ============ cta ============ */
+.cta{border-top:1px solid var(--line);background:var(--paper-2)}
+.cta-in{display:grid;grid-template-columns:1fr auto;gap:clamp(28px,4vw,60px);align-items:end}
+.cta h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,50px);
+  line-height:1.35;letter-spacing:.04em}
+@media(max-width:760px){.cta-in{grid-template-columns:1fr}}
+
+/* 門市卡 */
+.shop{border:1px solid var(--ink);background:var(--paper);
+  padding:clamp(26px,3vw,38px) clamp(24px,3vw,40px);min-width:min(100%,392px)}
+.shop-name{font-family:var(--display);font-weight:700;font-size:20px;
+  letter-spacing:.14em;padding-bottom:16px;margin-bottom:20px;
+  border-bottom:1px solid var(--line)}
+.shop-dl{display:grid;grid-template-columns:auto 1fr;gap:14px 20px;align-items:baseline}
+.shop-dl dt{font-size:11.5px;letter-spacing:.24em;color:var(--ink-3);white-space:nowrap}
+.shop-dl dd{font-family:var(--display);font-size:19px;letter-spacing:.05em;line-height:1.6}
+.shop-dl dd a{color:var(--ink);text-decoration:none;
+  border-bottom:1px solid rgba(27,23,18,.22);padding-bottom:2px;transition:color .2s,border-color .2s}
+.shop-dl dd a:hover{color:var(--gold);border-color:var(--gold)}
+.shop-dl .near{display:block;font-family:var(--sans);font-size:13px;
+  letter-spacing:.06em;color:var(--ink-3);margin-top:8px;border:0}
+@media(max-width:760px){
+  .shop{min-width:0}
+  .shop-dl dd{font-size:17px}
+}
+
+/* ============ footer ============ */
+footer{background:var(--ink);color:var(--bone-dim);padding-block:clamp(50px,6vw,80px)}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:clamp(28px,4vw,56px)}
+footer b.fbrand{font-family:var(--display);font-size:24px;font-weight:900;
+  letter-spacing:.24em;color:var(--bone);display:block;margin-bottom:14px}
+footer h5{font-size:11.5px;letter-spacing:.3em;color:var(--gold-lite);margin-bottom:16px;font-weight:500}
+footer ul{list-style:none;display:grid;gap:10px;font-size:14px}
+footer .menu-list a{border-bottom:0}
+footer a{text-decoration:none;color:var(--bone);border-bottom:1px solid rgba(244,236,224,.22);padding-bottom:1px}
+footer a:hover{color:var(--gold-lite);border-color:var(--gold-lite)}
+.disclaimer{margin-top:clamp(40px,5vw,64px);padding-top:26px;
+  border-top:1px solid rgba(244,236,224,.14);font-size:12.5px;line-height:2;color:#8b8172}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr}}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.61,.36,1)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none}}
+</style>
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top"><b>康燕居</b><span>KANG YEN JU</span></a>
+    <nav aria-label="主選單">
+      <ul>
+        <li><a class="lnk" href="#origin">源流</a></li>
+        <li><a class="lnk" href="#bencao">本草</a></li>
+        <li><a class="lnk" href="#places">產地</a></li>
+        <li><a class="lnk" href="#wild">洞燕</a></li>
+        <li><a class="lnk" href="#keep">堅持</a></li>
+        <li><a class="lnk" href="#contact">聯絡</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" style="padding-block:0">
+  <div class="hero-txt">
+    <h1 class="hero-vert">康燕<i>居</i></h1>
+    <p class="hero-tag">一盞燕窩<br>四百年的講究</p>
+    <p class="hero-sub">從人跡難至的石灰岩壁，到桌上的一盅白瓷。四百年來，燕窩換過無數種吃法，唯一沒變的是——它從來不是容易得到的東西。</p>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="#wild">看採收現場</a>
+      <a class="btn btn-ghost" href="#bencao">本草裡的燕窩</a>
+    </div>
+  </div>
+  <figure class="hero-img">
+    <img src="assets/cliff_wide.jpg" alt="採燕人攀附在垂直岩壁的繩索上，頭頂岩檐排滿燕窩，腳下是深谷" width="1400" height="1871">
+    <figcaption>柬埔寨‧石灰岩絕壁　野生洞燕採收現場實拍</figcaption>
+  </figure>
+</section>
+
+<!-- ============ STRIP ============ -->
+<div class="strip">
+  <div class="strip-in">
+    <div><b>逾 400 年</b><small>燕窩進入華人餐桌的歷史</small></div>
+    <div><b>約 35 天</b><small>一隻雄性金絲燕築成一巢所需的時間</small></div>
+    <div><b>60–65%</b><small>燕窩乾重中的蛋白質佔比</small></div>
+    <div><b>6 個產地</b><small>東南亞主要的洞燕與屋燕來源國</small></div>
+  </div>
+</div>
+
+<!-- ============ 源流 ============ -->
+<section id="origin">
+  <div class="wrap">
+    <div class="two">
+      <div class="sect-head rv">
+        <div class="kicker">Origin</div>
+        <h2 class="sect-title">燕窩的由來<br>與那些流傳的故事</h2>
+        <p class="lede">先說一件多數人都弄錯的事：燕窩不是燕子的窩。築出這只巢的，是雨燕目的金絲燕；牠們不銜泥、不叼草，而是用唾液，一絲一絲把巢拉在岩壁上。</p>
+      </div>
+      <figure class="fig rv">
+        <img src="assets/img_dried_nest.jpg" alt="數盞乾燕窩置於深色石板上，可見細密交織的絲狀紋理" loading="lazy" width="1448" height="1086">
+        <figcaption>燕盞的紋理，就是金絲燕來回拉出的唾液絲。絲越細密完整，等級越高。</figcaption>
+      </figure>
+    </div>
+
+    <div class="entries">
+      <article class="entry rv">
+        <div class="idx">其一</div>
+        <div>
+          <h3>築巢的其實是「金絲燕」</h3>
+          <p>燕窩的來源是雨燕目的金絲燕屬（Aerodramus），與我們熟悉的家燕分屬不同科別。採收量最大的兩種，是白巢金絲燕（<i lang="la">A. fuciphagus</i>）與黑巢金絲燕（<i lang="la">A. maximus</i>）。牠們的巢是一只淺杯，牢牢黏在洞壁上，由交織的唾液凝結而成——一隻雄鳥要花上大約 35 天，才能築完一巢。</p>
+        </div>
+      </article>
+
+      <article class="entry rv">
+        <div class="idx">其二</div>
+        <div>
+          <h3>四百年前，它開始被端上桌</h3>
+          <p>燕窩作為食材出現在華人飲食中，已有四百年以上的歷史。最廣為流傳的說法，是明代船隊下西洋途中在南洋遇風受困，隨行者攀岩取下岩壁上的白色鳥巢充飢，返航後帶回中土——傳說難以考證，但南洋與華人餐桌之間的這條路，確實自那個時代開始被走出來。</p>
+        </div>
+      </article>
+
+      <article class="entry rv">
+        <div class="idx">其三</div>
+        <div>
+          <h3>《本草綱目》裡沒有它</h3>
+          <p>一個少有人提起的細節：李時珍的《本草綱目》並未收錄燕窩。直到清代趙學敏寫《本草綱目拾遺》時，燕窩才被正式補進本草體系。也就是說，燕窩是先紅遍餐桌，才被寫進藥典的——它的地位不是醫家給的，是幾代人吃出來的。</p>
+        </div>
+      </article>
+
+      <article class="entry rv">
+        <div class="idx">其四</div>
+        <div>
+          <h3>從貢品到日常</h3>
+          <p>清代的宮廷膳單裡，冰糖燕窩是常見的一味；而在民間，它長期是聘禮、彌月、產後與探病時才捨得動用的禮數。時至今日，燕窩早已走進日常，但那份「拿出來就是心意」的分量，一直留著。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 本草 ============ -->
+<section id="bencao" class="bencao">
+  <div class="wrap">
+    <div class="kicker rv">Materia Medica</div>
+    <h2 class="sect-title rv" style="margin-bottom:clamp(40px,5vw,72px)">本草裡的燕窩</h2>
+
+    <div class="quote-block">
+      <blockquote class="quote-vert rv">燕窩<em>大養肺陰</em>，化痰止嗽，補而能清，為調理虛損癆瘵之聖藥。</blockquote>
+      <div class="rv">
+        <p class="lede" style="margin-top:0">中醫看燕窩，看的不是「補」，而是「潤」。它性平、味甘，走肺、胃、腎三經；歷代醫家看重的，是它補得住卻不上火——在傳統食療的框架裡，這種「補而能清」的性格相當少見。</p>
+        <p class="quote-cite">— 清‧吳儀洛《本草從新》</p>
+
+        <dl class="prop">
+          <div><dt>性 味</dt><dd>甘、平</dd></div>
+          <div><dt>歸 經</dt><dd>肺 ‧ 胃 ‧ 腎</dd></div>
+          <div><dt>傳統定位</dt><dd>養陰潤燥</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="uses">
+      <article class="use rv">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c0 3-3 4-3 7a3 3 0 0 0 6 0c0-3-3-4-3-7Z"/><path d="M5 14c0 4 3 7 7 7s7-3 7-7"/></svg>
+        <h4>養陰潤燥</h4>
+        <p>秋冬乾燥、久咳無痰、喉間乾癢時，古籍中最常被提到的用法。傳統上以冰糖燉盅、少量長期服用為主，講究的是「細水長流」而非一次大補。</p>
+      </article>
+      <article class="use rv">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-7-9.7A4.3 4.3 0 0 1 12 8a4.3 4.3 0 0 1 7 3.3C19 16.6 12 21 12 21Z"/><path d="M12 8V3"/></svg>
+        <h4>益氣補中</h4>
+        <p>病後、術後、產後的調養期，體虛卻又受不住溫燥藥材的人，傳統上會選擇燕窩。它的角色比較接近「墊底」——把胃口和元氣先扶起來。</p>
+      </article>
+      <article class="use rv">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><path d="M12 3.8c2.6 2.4 2.6 13.9 0 16.4M3.8 12h16.4"/></svg>
+        <h4>歷代的養顏之品</h4>
+        <p>燕窩被視為女性滋養之選，時間比任何一份成分表都久。現代研究指出，燕窩主要成分為唾液酸化的黏蛋白醣蛋白，乾重約含 60–65% 蛋白質、30–35% 醣類與約 1% 脂肪。</p>
+      </article>
+    </div>
+
+    <figure class="fig rv" style="margin-top:clamp(48px,5vw,76px);max-width:760px">
+      <img src="assets/img_tcm_still.jpg" alt="白瓷燉盅裡的燕窩，旁邊擺放紅棗、枸杞、參片與一具小銅秤" loading="lazy" width="1448" height="1086">
+      <figcaption>傳統燉法講究「隔水文火」——水滾即轉小，燉盅不直接碰火，讓燕絲慢慢舒展開。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 產地 ============ -->
+<section id="places">
+  <div class="wrap">
+    <div class="sect-head rv">
+      <div class="kicker">Where It Comes From</div>
+      <h2 class="sect-title">世界各地<br>是怎麼取下這一盞的</h2>
+      <p class="lede">燕窩的產區幾乎全數集中在東南亞。同樣是燕窩，採法卻天差地遠——有人吊在懸崖上取，有人在城鎮邊蓋一整棟房子等燕子自己來住。</p>
+    </div>
+
+    <div class="origin-bars rv" role="img" aria-label="東南亞主要產國年產量：印尼約 2,000 公噸、馬來西亞約 600 公噸、泰國約 400 公噸、菲律賓約 5 公噸">
+      <div class="bar-row lead">
+        <span class="nm">印尼</span>
+        <span class="bar-track"><span class="bar-fill" style="width:100%"></span></span>
+        <span class="val">約 2,000 公噸</span>
+      </div>
+      <div class="bar-row">
+        <span class="nm">馬來西亞</span>
+        <span class="bar-track"><span class="bar-fill" style="width:30%"></span></span>
+        <span class="val">約 600 公噸</span>
+      </div>
+      <div class="bar-row">
+        <span class="nm">泰國</span>
+        <span class="bar-track"><span class="bar-fill" style="width:20%"></span></span>
+        <span class="val">約 400 公噸</span>
+      </div>
+      <div class="bar-row">
+        <span class="nm">菲律賓</span>
+        <span class="bar-track"><span class="bar-fill" style="width:1.2%"></span></span>
+        <span class="val">約 5 公噸</span>
+      </div>
+    </div>
+    <p class="src-note">年產量為東南亞主要產國之出口概數，另有越南、柬埔寨等產區未計入。香港長期扮演全球燕窩貿易的集散地。</p>
+
+    <div class="places">
+      <article class="place rv">
+        <div class="flagline">INDONESIA</div>
+        <h4>印尼</h4>
+        <p>全球產量最大的國家，供應以「屋燕」為主。蘇門答臘北部一帶最為密集——沿海城鎮蓋起一棟棟無窗的水泥高樓，屋內模擬洞穴的溫濕度與回音，讓金絲燕自行入住築巢。</p>
+        <div class="how">採法：燕屋招引 ‧ 分期採收</div>
+      </article>
+
+      <article class="place rv">
+        <div class="flagline">MALAYSIA</div>
+        <h4>馬來西亞</h4>
+        <p>洞燕真正的起點。婆羅洲的 Gomantong 與 Niah 巨型石灰岩洞，是歷史上最重要的燕窩產地——採燕人以竹製長梯與藤索攀上數十公尺高的洞頂，這門手藝在當地已經傳了好幾代。</p>
+        <div class="how">採法：洞穴竹梯攀採 ＋ 燕屋並行</div>
+      </article>
+
+      <article class="place rv">
+        <div class="flagline">THAILAND</div>
+        <h4>泰國</h4>
+        <p>南部安達曼海的島礁是傳統洞燕產地，「燕窩島」（Ko Rangnok）之名即由此而來，島上採收長年由特許家族承包並派人看守；本土另有 Pak Phanang 一帶成規模的燕屋聚落。</p>
+        <div class="how">採法：海蝕洞攀採 ＋ 燕屋</div>
+      </article>
+
+      <article class="place rv">
+        <div class="flagline">VIET NAM</div>
+        <h4>越南</h4>
+        <p>會安外海的 Cù Lao Chàm 島群，是越南最負盛名的洞燕產區，採收與看守的制度延續數百年。當地人以竹架搭進海蝕洞內，貼著潮聲作業。</p>
+        <div class="how">採法：海島洞穴竹架採收</div>
+      </article>
+
+      <article class="place rv">
+        <div class="flagline">PHILIPPINES</div>
+        <h4>菲律賓</h4>
+        <p>產量最小的產國，主要分布在巴拉望一帶的海崖洞穴。當地採燕人有自己的稱呼——<i lang="fil">busyadors</i>；這一行的人數與收成，近年都在明顯下滑。</p>
+        <div class="how">採法：海崖洞穴徒手攀採</div>
+      </article>
+
+      <article class="place rv">
+        <div class="flagline">CAMBODIA</div>
+        <h4>柬埔寨</h4>
+        <p>內陸石灰岩絕壁上的野生洞燕，產量極少、幾乎不進入大宗貿易。本站影片即拍攝於此——竹竿插進岩壁當作棧道，一條主繩，一把彎刀，全靠人力。</p>
+        <div class="how">採法：懸崖竹架 ＋ 繩索懸吊</div>
+      </article>
+    </div>
+
+    <div class="vs">
+      <div class="rv">
+        <h4>洞　燕</h4>
+        <div class="en">CAVE NEST</div>
+        <ul>
+          <li><b>棲 地</b><span>天然石灰岩洞、海蝕洞與絕壁凹處</span></li>
+          <li><b>色 澤</b><span>受岩層礦物影響，多為米白至微黃，形狀較不規整</span></li>
+          <li><b>質 地</b><span>絲條較粗、密度高，燉後偏爽脆，耐燉不易化</span></li>
+          <li><b>採 收</b><span>攀岩、竹架、繩索，全程人力，風險與成本極高</span></li>
+          <li><b>產 量</b><span>稀少，一年僅二至三個採收期</span></li>
+        </ul>
+      </div>
+      <div class="rv">
+        <h4>屋　燕</h4>
+        <div class="en">HOUSE NEST</div>
+        <ul>
+          <li><b>棲 地</b><span>人造燕屋，模擬洞穴的溫度、濕度與聲響</span></li>
+          <li><b>色 澤</b><span>環境潔淨，多呈均勻象牙白，盞型整齊</span></li>
+          <li><b>質 地</b><span>絲條細緻，燉後較軟糯，出膠快</span></li>
+          <li><b>採 收</b><span>屋內分層作業，可控管溫濕度與採收週期</span></li>
+          <li><b>產 量</b><span>穩定，為目前市場供應主力</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <figure class="fig rv" style="margin-top:clamp(40px,4vw,64px);max-width:760px">
+      <img src="assets/img_swiftlet_house.jpg" alt="東南亞沿海城鎮中一棟無窗的水泥燕屋，屋頂附近有小型出入孔，周圍是椰子樹" loading="lazy" width="1448" height="1086">
+      <figcaption>燕屋自 1990 年代末開始普及，逐步取代洞穴成為主要來源；外觀多沿用東南亞街屋的形制。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 野生洞燕（暗場） ============ -->
+<section id="wild" class="night">
+  <div class="wrap">
+    <div class="sect-head rv">
+      <div class="kicker">The Cliff</div>
+      <h2 class="sect-title">一盞洞燕<br>是拿命換來的</h2>
+      <p class="lede">這段影片沒有配樂，也沒有加工。柬埔寨的採燕人帶著一條繩、一副竹架，爬上數十公尺高的石灰岩絕壁——沒有安全網，沒有機器，只有一把彎刀和一雙手。</p>
+    </div>
+
+    <div class="film">
+      <video src="wild_nest_story.mp4" poster="assets/video_cover.jpg"
+             controls muted loop playsinline preload="metadata"
+             width="720" height="944"
+             aria-label="野生洞燕採收現場影片，長度 28 秒，無聲，附繁體中文字卡"></video>
+
+      <div class="steps4">
+        <article class="rv">
+          <img src="assets/step_cave.jpg" alt="石灰岩洞頂密布金絲燕築成的白色燕盞" loading="lazy">
+          <div class="n" style="margin-top:14px">〇 一</div>
+          <h4>尋窩<span>FIND</span></h4>
+          <p>金絲燕只在人跡罕至的洞壁與絕壁凹處築巢。要找到一片可採的岩面，往往得先走上大半天的山路。</p>
+        </article>
+        <article class="rv">
+          <img src="assets/step_scaffold.jpg" alt="採燕人站在插入岩壁的竹竿棧道上作業" loading="lazy">
+          <div class="n" style="margin-top:14px">〇 二</div>
+          <h4>搭架<span>BUILD</span></h4>
+          <p>以竹竿與藤繩，在垂直岩壁上一根一根搭出臨時棧道。腳下是深谷，全程沒有第二道防護。</p>
+        </article>
+        <article class="rv">
+          <img src="assets/step_cut.jpg" alt="採燕人用彎刀貼著岩壁完整割下整塊燕盞" loading="lazy">
+          <div class="n" style="margin-top:14px">〇 三</div>
+          <h4>割採<span>HARVEST</span></h4>
+          <p>用彎刀貼壁、順著巢緣完整割下整片燕盞。力道稍偏就碎成屑，一整趟下來也不過採得數十盞。</p>
+        </article>
+        <article class="rv">
+          <img src="assets/step_bowl.jpg" alt="燉煮完成的燕窩盛在碗中，透亮如凍，點綴枸杞" loading="lazy">
+          <div class="n" style="margin-top:14px">〇 四</div>
+          <h4>成盞<span>SERVE</span></h4>
+          <p>浸潤、細挑羽絨、文火慢燉。野生洞燕燉開後條絲分明、透亮帶彈，入口是山岩養出的清潤。</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="vow">
+      <div><b>離巢後才採</b><small>不取有蛋、有雛的巢，讓下一季仍有燕子回來。</small></div>
+      <div><b>不破壞巢基</b><small>貼壁割取、保留附著點，隔年金絲燕能在原地重築。</small></div>
+      <div><b>一年二至三期</b><small>依築巢週期分期採收，不搶收、不掏空整面岩壁。</small></div>
+      <div><b>全程手工</b><small>從攀爬、割採到挑毛，沒有任何一段能交給機器。</small></div>
+    </div>
+
+    <a class="poster-link" href="assets/wild_story_poster.jpg" target="_blank" rel="noopener">
+      展開完整採收圖解
+      <svg width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 6h18M13 1l5 5-5 5"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 堅持 ============ -->
+<section id="keep">
+  <div class="wrap">
+    <div class="sect-head rv">
+      <div class="kicker">Our Standard</div>
+      <h2 class="sect-title">康燕居的四件事</h2>
+      <p class="lede">燕窩這個行業，資訊落差太大，客人幾乎無從判斷。所以我們把標準寫在最前面——不是為了好聽，是為了讓你有東西可以拿來比對。</p>
+    </div>
+
+    <div class="keeps">
+      <article class="keep rv">
+        <div class="no">〇 一</div>
+        <h4>只做白燕，不售血燕</h4>
+        <p>血燕的紅色與血無關。研究指出，那是燕屋或洞穴環境中的活性氮化合物與燕窩黏蛋白反應所致，並常伴隨較高的亞硝酸鹽含量。基於這一點，我們選擇不碰。</p>
+      </article>
+      <article class="keep rv">
+        <div class="no">〇 二</div>
+        <h4>手工挑毛，不漂不刷膠</h4>
+        <p>不使用漂白劑修飾色澤，不刷膠補盞型，也不做任何增加重量的處理。羽絨一根一根用鑷子挑，慢，但乾淨。</p>
+      </article>
+      <article class="keep rv">
+        <div class="no">〇 三</div>
+        <h4>產地與批次可追溯</h4>
+        <p>每一批貨都留下產地、採收期與加工紀錄。你問得出來的，我們就答得出來——這是這一行最基本、卻最常被省略的事。</p>
+      </article>
+      <article class="keep rv">
+        <div class="no">〇 四</div>
+        <h4>足乾足重</h4>
+        <p>燕窩含水量差一點，重量就差很多。我們以充分乾燥的狀態出貨，秤的是燕窩，不是水。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section id="contact" class="cta">
+  <div class="wrap cta-in">
+    <div class="rv">
+      <div class="kicker">Contact</div>
+      <h2 style="margin-top:18px">不確定怎麼挑？<br>先跟我們聊聊。</h2>
+      <p class="lede">洞燕與屋燕該選哪一種、一週吃幾次、燉多久，這些問題沒有標準答案，得看人。歡迎帶著你的狀況來問。</p>
+    </div>
+    <div class="shop rv">
+      <div class="shop-name">中壢門市總部</div>
+      <dl class="shop-dl">
+        <dt>電　話</dt><dd><a href="tel:034557575">03-455-7575</a></dd>
+        <dt>手　機</dt><dd><a href="tel:0976730778">0976-730-778</a></dd>
+        <dt>地　址</dt><dd><a href="https://maps.app.goo.gl/97hMxhn3zHdAUC6MA" target="_blank" rel="noopener">320 桃園市中壢區興農路 102 號</a><span class="near">近內壢火車站</span></dd>
+        <dt>營業時間</dt><dd>週一至週五　12:00–20:00<span class="near">週六、週日公休</span></dd>
+      </dl>
+      <div class="hero-cta" style="margin-top:30px">
+        <a class="btn btn-solid" href="tel:0976730778">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+          直接來電
+        </a>
+        <a class="btn btn-ghost" href="https://maps.app.goo.gl/97hMxhn3zHdAUC6MA" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          門市地圖
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <b class="fbrand">康燕居</b>
+        <p style="font-size:14px;line-height:2;max-width:24em">KANG YEN JU<br>燕窩專門 ‧ 產地直選 ‧ 手工挑毛</p>
+      </div>
+      <div>
+        <h5>本 站 目 錄</h5>
+        <ul class="menu-list">
+          <li><a href="#origin">燕窩的由來與故事</a></li>
+          <li><a href="#bencao">本草裡的燕窩</a></li>
+          <li><a href="#places">世界各地的採集方式</a></li>
+          <li><a href="#wild">野生洞燕採收現場</a></li>
+          <li><a href="#keep">康燕居的四件事</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>聯 絡 我 們</h5>
+        <ul>
+          <li>中壢門市總部</li>
+          <li>電話　<a href="tel:034557575">03-455-7575</a></li>
+          <li>手機　<a href="tel:0976730778">0976-730-778</a></li>
+          <li>地址　<a href="https://maps.app.goo.gl/97hMxhn3zHdAUC6MA" target="_blank" rel="noopener">320 桃園市中壢區興農路 102 號</a></li>
+          <li>（近內壢火車站）</li>
+          <li>營業　週一至週五 12:00–20:00</li>
+          <li>　　　週六、週日公休</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="disclaimer">
+      【資訊說明】本頁關於燕窩性味、歸經與傳統應用之敘述，係整理自中醫典籍與公開文獻，屬傳統食療觀點之介紹，非醫療效能宣稱，亦不能取代任何醫療診斷或治療。燕窩屬蛋白質類食品，嬰幼兒、孕產婦、慢性疾病患者及蛋白質過敏體質者，食用前請先諮詢醫師或營養師。<br>
+      【資料來源】金絲燕生態、築巢天數、營養組成、各國產量與血燕成色成因等數據，整理自公開學術文獻與百科資料；影片為柬埔寨野生洞燕採收現場實拍素材。<br>
+      © <span id="yr">2026</span> 康燕居 KANG YEN JU. 版權所有。
+    </p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+(function(){
+  var els = document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){ e.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
